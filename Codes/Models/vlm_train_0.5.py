@@ -37,6 +37,7 @@ class MultilabelVLMDataset(Dataset):
         # print(f"Original image size: {image.size}") # Print original image size
 
         # Use proper SmolVLM format with <image> token
+        #change the prompt according to your time series data
         prompt = "<image>The given image is a time series of two variable with 256 time stamps. Find out the anomalous time stamps from 0 to 255."
 
         # Process inputs - key changes here
@@ -667,3 +668,4 @@ try:
     np.save(f"{d_n}/val_losses.npy",np.array(val_losses).astype(np.float32))
 except Exception as e:
     print(f"Training failed: {str(e)}")
+
